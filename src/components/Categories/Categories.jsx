@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Category from '../Category/Category';
+
 
 const Categories = () => {
     const [categories, setCategories] = useState([]);
@@ -10,8 +12,10 @@ const Categories = () => {
     }, [])
 
     return (
-        <div>
-            <h1>This is categories : {categories.length}</h1>
+        <div className='grid md:grid-cols-4 gap-5'>
+            {
+                categories.map(category => <Category key={category.id} category={category}></Category>)
+            }
         </div>
     );
 };

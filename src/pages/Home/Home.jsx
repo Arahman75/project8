@@ -7,7 +7,10 @@ const Home = () => {
     return (
         <div >
             <Header></Header>
-            <Categories></Categories>
+            <div className='max-w-6xl mx-auto my-20'>
+                <Categories></Categories>
+            </div>
+
         </div>
     );
 };
