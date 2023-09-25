@@ -1,5 +1,7 @@
 import React from 'react';
 import '/Donate.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Donate = ({ category }) => {
     const { id, price, title, image, description, button_bg_color, } = category;
@@ -12,21 +14,22 @@ const Donate = ({ category }) => {
         if (!donationItems) {
             addDonationArray.push(category);
             localStorage.setItem('cart', JSON.stringify(addDonationArray));
-            alert('product added');
+            toast('Donation added the successfully');
+
         } else {
             const isExist = donationItems.find(item => item.id === id);
             console.log(isExist);
             if (!isExist) {
                 addDonationArray.push(...donationItems, category);
-                localStorage.setItem('cart', JSON.stringify(addDonationArray))
-                alert('product added');
+                localStorage.setItem('cart', JSON.stringify(addDonationArray));
+                toast('Donation added the successfully');
+
+            } else {
+                toast('Donation already added. Please try others option');
             }
-            console.log('already added');
-            alert('already added');
 
         }
 
-        // localStorage.setItem('cart', JSON.stringify([{ name: 'rahman' }, { name: 'kamal' }]))
     }
 
     return (
@@ -41,6 +44,7 @@ const Donate = ({ category }) => {
                 <h2 className="text-4xl text-[#0B0B0B] font-bold mb-5">{title}</h2>
                 <p>{description}</p>
             </div>
+            <ToastContainer />
         </div>
     );
 };

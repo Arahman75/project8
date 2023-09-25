@@ -12,7 +12,6 @@ const DonationDetails = () => {
         const findDonate = donateCategories?.find(donate => JSON.stringify(donate.id) === id)
 
         setCategory(findDonate);
-        // console.log(findDonate);
     }, [id, donateCategories])
 
     return (
