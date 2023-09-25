@@ -16,7 +16,7 @@ const DonationDetails = () => {
     }, [id, donateCategories])
 
     return (
-        <div>
+        <div className='max-w-6xl mx-auto my-20'>
             <Donate category={category}></Donate>
         </div>
     );
