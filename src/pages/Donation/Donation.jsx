@@ -7,13 +7,16 @@ import 'react-toastify/dist/ReactToastify.css';
 const Donation = () => {
     const [addDonate, setAddDonate] = useState([]);
     const [dataLength, setDataLength] = useState(4);
-
+    const [totalPrice, setTotalPrice] = useState(0)
 
     useEffect(() => {
         const donationItem = JSON.parse(localStorage.getItem('cart'));
 
         if (donationItem) {
             setAddDonate(donationItem);
+
+            const total = donationItem.reduce((preValue, currentItem) => preValue + (currentItem.price), 0);
+            console.log(total);
 
         } else {
             toast('Not pound your donation, please try again');

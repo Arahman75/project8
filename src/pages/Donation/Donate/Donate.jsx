@@ -11,6 +11,7 @@ const Donate = ({ category }) => {
 
         const donationItems = JSON.parse(localStorage.getItem('cart'));
 
+
         if (!donationItems) {
             addDonationArray.push(category);
             localStorage.setItem('cart', JSON.stringify(addDonationArray));
