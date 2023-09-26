@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Donation = () => {
     const [addDonate, setAddDonate] = useState([]);
     const [dataLength, setDataLength] = useState(4);
-    const [totalPrice, setTotalPrice] = useState(0)
+
 
     useEffect(() => {
         const donationItem = JSON.parse(localStorage.getItem('cart'));
@@ -37,7 +37,6 @@ const Donation = () => {
                     </DonationCart>)
                 }
 
-
             </div>
             <div className={addDonate === dataLength.length ? 'hidden' : ''}>
                 <div className='flex items-center justify-center mb-7'>
@@ -48,8 +47,6 @@ const Donation = () => {
             </div>
             <ToastContainer />
         </div >
-
-
     );
 };
 

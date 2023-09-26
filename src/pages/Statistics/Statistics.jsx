@@ -37,13 +37,10 @@ const Statistics = () => {
                         fill="#0052FF"
                         label
                     />
-
                     <Legend></Legend>
                     <Tooltip />
                 </PieChart>
             </div>
-
-
         </div>
     );
 
