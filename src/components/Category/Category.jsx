@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Category = ({ category }) => {
     const { id, title, image, category_name, card_bg_color, text_color, category_bg_color } = category;
@@ -7,7 +7,7 @@ const Category = ({ category }) => {
     return (
         <Link to={`/donationDetails/${id}`} >
             <div className="card shadow-xl rounded-lg" style={{ backgroundColor: card_bg_color }}>
-                <figure><img src={image} alt="Shoes" /></figure>
+                <figure><img className='w-full' src={image} alt="Shoes" /></figure>
                 <div className='p-5'>
                     <button style={{ backgroundColor: category_bg_color, color: text_color }} className="px-4 py-2 rounded font-medium">{category_name}</button>
                     <h2 className="text-xl font-semibold mt-2" style={{ color: text_color }}>
